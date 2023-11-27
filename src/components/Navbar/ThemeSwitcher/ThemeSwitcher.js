@@ -6,10 +6,12 @@ import "./ThemeSwitcher.css";
 
 const theme = localStorage.getItem("theme");
 const body = document.querySelector("body");
+
 if (theme) {
   body.classList.add(theme);
 }
-export const ThemeSwitcher = () => { 
+
+export const ThemeSwitcher = () => {
   const switchTheme = () => {
     if (body.classList.contains("dark")) {
       body.classList.replace("dark", "light");
@@ -28,7 +30,7 @@ export const ThemeSwitcher = () => {
         <input
           type="checkbox"
           className="theme-switch__checkbox"
-          defaultChecked
+          defaultChecked={theme === "light" ? false : true}
         />
         <div className="theme-switch__container" onClick={() => switchTheme()}>
           <div className="theme-switch__clouds"></div>

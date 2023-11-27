@@ -7,10 +7,6 @@
   --gray4: #454e56;
   --gray5: #2a2e35;
   --gray6: #12181b;
-  --blue: #0084a5;
-  --red: #de686b;
-  --yellow: #fff565;
-
   --dark-blue: #04121f;
   --nav-padding: 0.7em;
   --nav-height: 30px;
@@ -20,27 +16,32 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--dark-blue);
 }
 
 * {
   transition: var(--transition-delay);
+  color: var(--text);
 }
 
 a {
   text-decoration: none;
+  color: var(--text);
 }
 
 .light {
+  --accent-color: #0084a5;
   --bg: url("./assets/blob-scene-haikei.svg");
   --text: var(--gray6);
-  --border-color: var(--blue);
+  --border-color: var(--accent-color);
   background-size: cover;
 }
 
 .dark {
+  --accent-color: #de686b;
   --bg: url("./assets/layered-waves-haikei.svg");
   --text: var(--gray1);
-  --border-color: var(--red);
+  --border-color: var(--accent-color);
   background-size: cover;
 }
 
@@ -68,12 +69,18 @@ main {
 }
 
 footer {
-  border: 5px solid red;
-  width: 100%;
-  background-image: url("./assets/layered-waves-haikei.svg");
-  background-size: cover;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
 }
-footer section {
-  min-height: 100vh;
-  height: 100%;
+
+#footer-card-wrapper {
+  filter: brightness(110%);
+}
+
+/* TODO Do this by currentColor. Change parent only maybe. */
+.icon:hover svg path {
+  fill: #c4c4c4;
 }
