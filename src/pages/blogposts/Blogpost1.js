@@ -1,6 +1,6 @@
 import React from "react";
 
-function post1(props) {
+export function Blogpost1() {
   return (
     <>
       <h3 className="blog-heading">Test title</h3>
@@ -11,14 +11,6 @@ function post1(props) {
         end, who knows I'm adding value or not. But I'm trying to make some nice
         thing here, and with the least distraction.
       </p>
-    </>
-  );
-}
-
-export function postPreview() {
-  return (
-    <>
-
     </>
   );
 }

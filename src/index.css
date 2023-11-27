@@ -1,5 +1,5 @@
 :root {
-  --link-hover: #468186;
+  --link-hover: var(--red);
   --gray0: #f8f8f8;
   --gray1: #dbe1e8;
   --gray2: #b2becd;
@@ -8,13 +8,14 @@
   --gray5: #2a2e35;
   --gray6: #12181b;
   --blue: #0084a5;
-  --purple: #a82dd1;
+  --red: #de686b;
   --yellow: #fff565;
 
   --dark-blue: #04121f;
   --nav-padding: 0.7em;
   --nav-height: 30px;
   --padding: 25px 50px;
+  --transition-delay: 300ms;
 }
 
 html {
@@ -22,21 +23,25 @@ html {
 }
 
 * {
-  transition: 400ms;
+  transition: var(--transition-delay);
+}
+
+a {
+  text-decoration: none;
 }
 
 .light {
-  --bg: var(--gray0);
-  --bg-nav: linear-gradient(to right, var(--gray1), var(--gray2));
+  --bg: url("./assets/blob-scene-haikei.svg");
   --text: var(--gray6);
   --border-color: var(--blue);
+  background-size: cover;
 }
 
 .dark {
-  --bg: var(--dark-blue);
-  --bg-nav: linear-gradient(to right, #2a2e35, #12181b);
+  --bg: url("./assets/layered-waves-haikei.svg");
   --text: var(--gray1);
-  --border-color: var(--purple);
+  --border-color: var(--red);
+  background-size: cover;
 }
 
 body {
@@ -45,40 +50,6 @@ body {
   font-family: "Montserrat", sans-serif;
   background: var(--bg);
   color: var(--text);
-}
-
-nav {
-  min-height: var(--nav-height);
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 11.2px 32px;
-  font-weight: bold;
-  color: var(--text);
-  background: var(--dark-blue);
-}
-
-.nav-pages,
-.nav-home,
-.toggle-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-pages {
-  flex: 1;
-  flex-wrap: wrap;
-  gap: 0.1em clamp(0.6em, 2vw, 2em);
-}
-nav a {
-  text-decoration: none;
-
-  color: var(--text);
-}
-nav a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
 }
 
 main {
@@ -90,14 +61,13 @@ main {
   justify-content: center;
   margin: 0 auto;
 
-  background-image: url("./assets/layered-waves-haikei.svg");
+  background: var(--bg);
   background-size: cover;
 
   z-index: 1;
 }
 
 footer {
-  background: purple;
   border: 5px solid red;
   width: 100%;
   background-image: url("./assets/layered-waves-haikei.svg");

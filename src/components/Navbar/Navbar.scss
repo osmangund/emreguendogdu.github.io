@@ -1,0 +1,77 @@
+.dark {
+  --bg-nav: linear-gradient(to right, #2a2e35, #12181b);
+}
+
+.light {
+  --bg-nav: linear-gradient(
+    to right,
+    #c4c4c4,
+    #c4c4c4,
+    #c4c4c4,
+    #c4c4c4,
+    #c4c4c4,
+    #c4c4c4,
+    #c8c8c8,
+    #c8c8c8,
+    #cfcfcf,
+    #d6d6d6,
+    #dddddd,
+    #e4e4e4,
+    #ebebeb
+  );
+}
+
+@media only screen and (max-width: 920px) {
+  .light {
+    --bg-nav: #c4c4c4;
+  }
+}
+
+// TODO add more media queries to match smaller screens
+
+nav {
+  min-height: var(--nav-height);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 11.2px 32px;
+  font-weight: bold;
+  color: var(--text);
+  background: var(--bg-nav);
+  a {
+    color: var(--text);
+  }
+  a:hover {
+    color: var(--link-hover);
+  }
+  .nav-pages,
+  .nav-home,
+  .toggle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-pages {
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 0.1em clamp(0.6em, 2vw, 2em);
+    a {
+      line-height: 35px;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0px;
+        height: 5px;
+        left: 50%;
+        bottom: 0;
+        background-color: white;
+        transition: all ease-in-out var(--transition-delay);
+      }
+      &:hover::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
