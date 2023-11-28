@@ -1,14 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.e171209c.css",
-    "main.js": "/static/js/main.9b6ca658.js",
+    "main.css": "/static/css/main.ee5eec6b.css",
+    "main.js": "/static/js/main.b0f80f13.js",
+    "static/media/blob-scene-haikei.svg": "/static/media/blob-scene-haikei.971a6db32f55ca64985b.svg",
     "static/media/layered-waves-haikei.svg": "/static/media/layered-waves-haikei.02588ac2589ae75bb9cc.svg",
+    "static/media/github.svg": "/static/media/github.a1123014e644e3e7fc7d591bd9b9b2d6.svg",
     "index.html": "/index.html",
-    "main.e171209c.css.map": "/static/css/main.e171209c.css.map",
-    "main.9b6ca658.js.map": "/static/js/main.9b6ca658.js.map"
+    "static/media/linkedin.svg": "/static/media/linkedin.49f8e9f78564f8aa8766de77cbaf110b.svg",
+    "main.ee5eec6b.css.map": "/static/css/main.ee5eec6b.css.map",
+    "main.b0f80f13.js.map": "/static/js/main.b0f80f13.js.map"
   },
   "entrypoints": [
-    "static/css/main.e171209c.css",
-    "static/js/main.9b6ca658.js"
+    "static/css/main.ee5eec6b.css",
+    "static/js/main.b0f80f13.js"
   ]
 }
