@@ -1,5 +1,5 @@
 :root {
-  --link-hover: #468186;
+  --link-hover: var(--red);
   --gray0: #f8f8f8;
   --gray1: #dbe1e8;
   --gray2: #b2becd;
@@ -7,36 +7,42 @@
   --gray4: #454e56;
   --gray5: #2a2e35;
   --gray6: #12181b;
-  --blue: #0084a5;
-  --purple: #a82dd1;
-  --yellow: #fff565;
-
   --dark-blue: #04121f;
   --nav-padding: 0.7em;
   --nav-height: 30px;
   --padding: 25px 50px;
+  --transition-delay: 300ms;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--dark-blue);
 }
 
 * {
-  transition: 400ms;
+  transition: var(--transition-delay);
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
 }
 
 .light {
-  --bg: var(--gray0);
-  --bg-nav: linear-gradient(to right, var(--gray1), var(--gray2));
+  --accent-color: #0084a5;
+  --bg: url("./assets/blob-scene-haikei.svg");
   --text: var(--gray6);
-  --border-color: var(--blue);
+  --border-color: var(--accent-color);
+  background-size: cover;
 }
 
 .dark {
-  --bg: var(--dark-blue);
-  --bg-nav: linear-gradient(to right, #2a2e35, #12181b);
+  --accent-color: #de686b;
+  --bg: url("./assets/layered-waves-haikei.svg");
   --text: var(--gray1);
-  --border-color: var(--purple);
+  --border-color: var(--accent-color);
+  background-size: cover;
 }
 
 body {
@@ -47,63 +53,37 @@ body {
   color: var(--text);
 }
 
-nav {
-  min-height: var(--nav-height);
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 11.2px 32px;
-  font-weight: bold;
-  color: var(--text);
-  background: var(--dark-blue);
-}
-
-.nav-pages,
-.nav-home,
-.toggle-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-pages {
-  flex: 1;
-  flex-wrap: wrap;
-  gap: 0.1em clamp(0.6em, 2vw, 2em);
-}
-nav a {
-  text-decoration: none;
-
-  color: var(--text);
-}
-nav a:hover {
-  color: var(--link-hover);
-  text-decoration: underline;
-}
-
 main {
   height: 100vh;
+  height: calc(100vh - var(--nav-height));
   display: flex;
-  padding: var(--padding);
   text-align: center;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
 
-  background-image: url("./assets/layered-waves-haikei.svg");
+  background: var(--bg);
   background-size: cover;
 
   z-index: 1;
 }
 
 footer {
-  background: purple;
-  border: 5px solid red;
-  width: 100%;
-  background-image: url("./assets/layered-waves-haikei.svg");
-  background-size: cover;
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
 }
-footer section {
-  min-height: 100vh;
-  height: 100%;
+
+#footer-card-wrapper {
+  margin: 0 auto;
+}
+
+.icon {
+  padding: 10px;
+}
+.icon:hover svg path {
+  fill: #c4c4c4;
+  background-color: black;
 }

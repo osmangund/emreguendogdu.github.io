@@ -11,3 +11,7 @@
 .grid-item {
     border: .5px solid var(--border-color);
 }
+.grid-item:hover {
+    filter: brightness(125%);
+    cursor: pointer;
+}

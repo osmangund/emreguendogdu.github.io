@@ -211,6 +211,11 @@
 
 /* actions */
 
+.theme-switch__container {
+  /* ...other styles... */
+  background-color: var(--container-night-bg);
+}
+
 .theme-switch__checkbox:checked + .theme-switch__container {
   background-color: var(--container-night-bg);
 }

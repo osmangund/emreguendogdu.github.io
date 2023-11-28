@@ -1,4 +1,5 @@
-import { ThemeSwitcher } from "./ThemeSwitcher";
+import { ThemeSwitcher } from "./ThemeSwitcher/ThemeSwitcher";
+import "./Navbar.scss";
 
 export function Navbar() {
   return (

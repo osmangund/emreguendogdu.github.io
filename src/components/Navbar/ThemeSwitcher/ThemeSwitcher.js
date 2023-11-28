@@ -4,19 +4,34 @@ import "./ThemeSwitcher.css";
 // https://uiverse.io/Galahhad/strong-squid-82
 // https://dribbble.com/tags/switch-button
 
+const theme = localStorage.getItem("theme");
+const body = document.querySelector("body");
+
+if (theme) {
+  body.classList.add(theme);
+}
+
 export const ThemeSwitcher = () => {
   const switchTheme = () => {
-    const body = document.querySelector("body");
     if (body.classList.contains("dark")) {
       body.classList.replace("dark", "light");
+      localStorage.setItem("theme", "light");
+    } else if (body.classList.contains("light")) {
+      body.classList.replace("light", "dark");
+      localStorage.setItem("theme", "dark");
     } else {
       body.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     }
   };
   return (
     <>
       <label className="theme-switch">
-        <input type="checkbox" className="theme-switch__checkbox" />
+        <input
+          type="checkbox"
+          className="theme-switch__checkbox"
+          defaultChecked={theme === "light" ? false : true}
+        />
         <div className="theme-switch__container" onClick={() => switchTheme()}>
           <div className="theme-switch__clouds"></div>
           <div className="theme-switch__stars-container">
