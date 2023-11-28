@@ -28,6 +28,7 @@ export default function Home() {
               href="https://github.com/emreguendogdu"
               target="_blank"
               rel="external noreferrer"
+              class="icon"
             >
               <GitHubIcon />
             </a>

@@ -55,8 +55,8 @@ body {
 
 main {
   height: 100vh;
+  height: calc(100vh - var(--nav-height));
   display: flex;
-  padding: var(--padding);
   text-align: center;
   flex-direction: column;
   justify-content: center;
@@ -77,10 +77,13 @@ footer {
 }
 
 #footer-card-wrapper {
-  filter: brightness(110%);
+  margin: 0 auto;
 }
 
-/* TODO Do this by currentColor. Change parent only maybe. */
+.icon {
+  padding: 10px;
+}
 .icon:hover svg path {
   fill: #c4c4c4;
+  background-color: black;
 }
