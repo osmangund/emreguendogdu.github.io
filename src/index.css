@@ -1,13 +1,7 @@
 :root {
   --link-hover: var(--red);
-  --gray0: #f8f8f8;
-  --gray1: #dbe1e8;
-  --gray2: #b2becd;
-  --gray3: #6c7983;
-  --gray4: #454e56;
-  --gray5: #2a2e35;
-  --gray6: #12181b;
-  --dark-blue: #04121f;
+  --bg-blue: #04121f;
+
   --nav-padding: 0.7em;
   --nav-height: 30px;
   --padding: 25px 50px;
@@ -16,32 +10,34 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: var(--dark-blue);
+  background-color: var(--bg-blue);
 }
 
 * {
   transition: var(--transition-delay);
-  color: var(--text);
+  color: var(--text-color);
 }
 
 a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--text-color);
 }
 
 .light {
   --accent-color: #0084a5;
   --bg: url("./assets/blob-scene-haikei.svg");
-  --text: var(--gray6);
+  --text-color: #12181b;
   --border-color: var(--accent-color);
+  --footer-bg: lightgray;
   background-size: cover;
 }
 
 .dark {
   --accent-color: #de686b;
   --bg: url("./assets/layered-waves-haikei.svg");
-  --text: var(--gray1);
+  --text-color: #dbe1e8;
   --border-color: var(--accent-color);
+  --footer-bg: var(--bg-blue);
   background-size: cover;
 }
 
@@ -50,7 +46,7 @@ body {
   padding: 0;
   font-family: "Montserrat", sans-serif;
   background: var(--bg);
-  color: var(--text);
+  color: var(--text-color);
 }
 
 main {
@@ -64,8 +60,6 @@ main {
 
   background: var(--bg);
   background-size: cover;
-
-  z-index: 1;
 }
 
 footer {
@@ -74,6 +68,7 @@ footer {
   text-align: center;
   flex-direction: column;
   justify-content: center;
+  background: var(--footer-bg);
 }
 
 #footer-card-wrapper {

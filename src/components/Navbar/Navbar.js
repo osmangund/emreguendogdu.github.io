@@ -9,8 +9,8 @@ export function Navbar() {
       </div>
       <div className="nav-pages">
         <a href="/">Home</a>
-        <a href="/blog">Blog</a>
-        <a href="/portfolio">Portfolio</a>
+        <a href="/#/blog">Blog</a>
+        <a href="/#/portfolio">Portfolio</a>
       </div>
       <div className="toggle-button">
         <ThemeSwitcher />

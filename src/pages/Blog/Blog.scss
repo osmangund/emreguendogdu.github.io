@@ -1,0 +1,43 @@
+@use "../../index.css";
+
+.light {
+  --card-bg: lightgray;
+}
+.dark {
+  --card-bg: var(--bg-blue);
+}
+
+.blog-container {
+  display: flex;
+  //   flex-wrap: wrap;
+  padding: 3rem;
+  .blog-item {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 200px;
+    width: 400px;
+    min-width: 250px;
+    padding: 1.5rem;
+    border: 0.5px solid var(--border-color);
+    overflow: auto;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: -1rem 1rem 3rem #000;
+    &:hover {
+      transform: translateY(-1rem);
+
+      filter: brightness(125%);
+      cursor: pointer;
+    }
+    &:hover ~ .blog-item {
+      transform: translateX(130px);
+    }
+    .date {
+      color: darken(index.$--text-color, 10);
+    }
+  }
+  .blog-item:not(:first-child) {
+    margin-left: -130px;
+  }
+}

@@ -2,10 +2,11 @@ import { ReactComponent as LinkedinIcon } from "../../assets/linkedin.svg";
 import { ReactComponent as GitHubIcon } from "../../assets/github.svg";
 
 export default function Home() {
+  const introductionText = "Hi, my name is Emre. I'm a software developer. "
   return (
     <>
       <main id="main">
-        I think I should write the main myself on every page.
+        {introductionText}
       </main>
       <section id="blog-section"></section>
       <footer>
